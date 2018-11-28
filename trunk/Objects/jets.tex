@@ -1,0 +1,47 @@
+Vector Boson Fusion (VBF) and other production mechanisms of Higgs Boson normally differ as regards the jet kinematics. 
+In this analysis, jets are thus used for the event categorization, which will be introduced in Section~\ref{sec:categorization}.
+
+\subsubsection{Jet Identification}
+
+Jets are reconstructed by using the anti-$k_T$ clustering algorithm out of particle flow candidates, with a distance parameter $R = 0.4$, 
+after rejecting the charged hadrons that are associated to a pileup primary  vertex.
+
+To reduce instrumental background, the loose working point jet ID suggested by the JetMET Physics Object Group is applied. 
+In this analysis, the jets are required to be within $|\eta| < 4.7$ area and have a transverse momentum above 30 GeV. 
+In addition, the jets are cleaned from any of the tight leptons (passing the SIP and isolation cut computed after FSR correction) 
+and FSR photons by a separation criterion: $\Delta R(\text{jet,lepton/photon}) > 0.4$.
+
+
+\subsubsection{Jet Energy Corrections}
+
+The calorimeter response to particles is not linear
+and it is not straightforward to translate the measured jet energy
+to the true particle or parton energy, therefore we need Jet Energy Corrections.
+In this analysis, standard jet energy corrections are applied to the reconstructed jets,
+which consist of L1 Pileup, L2 Relative Jet Correction,
+L3 Absolute Jet Correction for both Monte Carlo samples and data,
+and also residual calibration for data.
+
+% Figure~\ref{fig:jets} shows the comparisoin between data and MC for the leading jet in Z events with exactly one jet,
+% where a selection $\Delta\phi(Z,{\rm jet})>2.5$ has been applied.
+
+% \begin{figure}[!h]
+% \centering
+% \includegraphics[width=0.49\linewidth]{Figures/Jets/Histo_etaj1_2e_dataeff.pdf}
+% \includegraphics[width=0.49\linewidth]{Figures/Jets/Histo_etaj1_2mu_dataeff.pdf}
+% \caption{Comparison between data and MC for jet $\eta$ in Z + 1 jet events. \label{fig:jets}}
+% \end{figure}
+
+
+\subsubsection{B-tagging}
+
+For categorization purpose, we need to distinguish whether a jet is b-jet or not.
+The \emph{Combined Secondary Vertex} algorithm is used as our b-tagging algorithm.
+It combines information about impact parameter significance,
+the secondary vertex and jet kinematics.
+The variables are combined using a likelihood ratio technique to compute the b-tag discriminator.
+In this analysis, a jet is considered to be b-tagged if it passes the \emph{CSVv2M} working point,
+i.e. if its \verb|pfCombinedInclusiveSecondaryVertexV2BJetTags| discriminator is greater than 0.8484~\cite{btagReferenceEffsRun2}.
+
+Data to simulation scale factors for b-tagging efficiency are provided for this working point for the full dataset as a function of jet $\pt$, $\eta$ and flavour.
+They are applied to simulated jets by downgrading (upgrading) the b-tagging status of a fraction of the b-tagged (untagged) jets that have a scale factor smaller (larger) than one.

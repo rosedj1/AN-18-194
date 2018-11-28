@@ -1,0 +1,31 @@
+\newcommand{\zd}{\ensuremath{Z_d}\xspace}
+\newcommand{\esp}{\ensuremath{\varepsilon}\xspace}
+
+\newcommand{\ggH}{\ensuremath{{\rm gg}\to{\rm H}}}
+\newcommand{\VH}{\ensuremath{{\rm VH}}}
+\newcommand{\ZH}{\ensuremath{{\rm ZH}}}
+\newcommand{\WH}{\ensuremath{{\rm WH}}}
+\newcommand{\ttH}{\ensuremath{t\bar{t}{\rm H}}}
+\newcommand{\qqZZ}{\ensuremath{\qqbar\to4\ell}\xspace}
+\newcommand{\ZZ}{\ensuremath{\cPZ\gamma^{*}}\xspace}
+\newcommand{\ggZZ}{\ensuremath{\Pg\Pg\to4\ell}\xspace}
+\newcommand{\zx}{\ensuremath{\rm Z+X}\xspace}
+\newcommand{\dy}{\ensuremath{\textrm{DY}+\textrm{jets}}\xspace}
+\newcommand{\ttNew}{\ensuremath{\mathrm{t}\bar{\mathrm{t}}}\xspace}
+\newcommand{\zg}{\ensuremath{\textrm{Z}+\gamma}\xspace}
+\newcommand{\wz}{\ensuremath{\textrm{WZ}}\xspace}
+
+\newcommand{\frEl}{\ensuremath{f_e}\xspace}
+\newcommand{\frMu}{\ensuremath{f_{\mu}}\xspace}
+
+\newcommand{\mass}[1]{\ensuremath{m_{#1}}\xspace}
+\def\met{\mbox{$E_\text{T}^{\rm miss}$}\xspace}
+
+\newcommand{\usedLumi}{\ensuremath{150~\fbinv}\xspace}
+%\newcommand{\mZ1}{\ensuremath{m_{Z1}}\xspace}
+%\newcommand{\mZ2}{\ensuremath{m_{Z2}}\xspace}
+%\newcommand{\m4l}{\ensuremath{m_{4\ell}}\xspace}
+%\newcommand{\pt}{\ensuremath{p_{\rm T}}}
+
+%\newcommand{\z1}{\ensuremath{Z_1}\xspace}
+%\newcommand{\z2}{\ensuremath{Z_2}\xspace}

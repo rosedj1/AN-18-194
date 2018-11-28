@@ -1,0 +1,62 @@
+\section{Event selection}
+\label{sec:evtselection}
+
+\subsection{Baseline selection}
+Events considered in this analysis are first required to fire various HLT 
+paths as described in Section~\ref{sec:trigpaths}. Duplicate events in 
+each primary datasets are removed accordingly. Events are also required to 
+have at least one good primary vertices. No MET filters are applied as 
+the \met variable is not used in the main analysis and hence the analysis 
+is not sensitive to noise effects or beam backgrounds.
+
+\subsection{ZZ candidate selection}
+\label{sec:zzcandsel}
+
+The four-lepton candidates are built from {\bf selected leptons}, which  
+are the tight leptons 
+%(defined in sections~\ref{sec:eleID} and~\ref{sec:muonReco}) 
+that pass the ${\rm SIP_{3D}} < 4$ vertex constraint
+and the isolation cuts 
+%(defined in sections~\ref{sec:eleiso} and~\ref{sec:muoniso}), 
+where FSR photons are subtracted as described in~\cite{AN-16-442,AN-17-342}
+[Check if this sentence is true for 2017 and 2018].
+A lepton cross cleaning is applied 
+by discarding electrons which are within $\Delta R < 0.05$ of selected muons. 
+
+The construction and selection of four-lepton candidates proceeds 
+according to the following sequence:
+\begin{enumerate}
+\item {\bf Z candidates} are defined as pairs of selected leptons
+ of opposite charge and matching flavour ($e^+ e^-$, \, $\mu^+\mu^-$)
+ that satisfy $4 < m_{\ell\ell(\gamma)} < 120~\GeVcc$, where the Z candidate mass
+ includes the selected FSR photons if any.
+\item {\bf ZZ candidates} are defined as pairs of non-overlapping Z candidates.
+ The Z candidate with reconstructed mass $m_{\ell\ell}$ closest to the nominal Z boson
+ mass is denoted as ${\rm Z_1}$, and the second one is denoted as ${\rm Z_2}$.
+ ZZ candidates are required to satisfy the following list of requirements:
+  \begin{itemize} 
+  \item {\bf Ghost removal }: $\Delta R(\eta,\phi) > 0.02$ between each of the four leptons.
+  \item {\bf lepton $p_T$}: Two of the four selected leptons should pass 
+     $p_{T,i} > 20~\GeVc$ and $p_{T,j} > 10~\GeVc$.
+  \item {\bf QCD suppression}: all four opposite-sign pairs that can
+     be built with the four leptons (regardless of lepton flavor)
+     must satisfy $m_{\ell\ell} > 4~\GeVcc$.
+     Here, selected FSR photons are not used in computing $m_{\ell\ell}$, 
+     since a QCD-induced low mass dilepton (eg. $J/\Psi$) 
+     may have photons nearby (e.g. from $\pi_0$). 
+  \item {\bf ${\rm Z_1}$ mass}: $m_{\rm Z1} > 40~\GeVcc$
+  \item {\bf 'smart cut'}: defining ${\rm Z_a}$ and ${\rm Z_b}$ as 
+     the mass-sorted alternative pairing Z candidates 
+     (${\rm Z_a}$ being the one closest to the nominal Z boson mass),
+     require NOT($|m_{\rm Za}-m_{\rm Z}| < |m_{\rm Z1}-m_{\rm Z}|$ AND $m_{\rm Zb}<12$).
+     Selected FSR photons are included in $m_{\rm Z}$'s computations.
+     This cut discards $4\mu$ and $4e$ candidates where the alternative pairing
+     looks like an on-shell Z + low-mass $\ell^+ \ell^-$. 
+  %\item {\bf four-lepton invariant mass}: $\mllll > 70~\GeVcc$
+  \item {\bf four-lepton invariant mass}: $118~\GeV < \mass{4\ell} > 130~\GeVcc$
+  \end{itemize}	
+\item Events containing at least one selected ZZ candidate form the {\bf signal region}.
+\end{enumerate}	
+
+If more than one ZZ candidate survives the above selection, the ZZ candidate with the ${\rm Z_1}$ closest in 
+mass to nominal Z boson mass is chosen.

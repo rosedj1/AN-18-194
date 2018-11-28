@@ -1,0 +1,67 @@
+\RCS$Revision: 481547 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-18-194/trunk/AN-18-194.tex $
+\RCS$Id: AN-18-194.tex 481547 2018-11-16 13:51:46Z klo $
+
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.49\textwidth}}{\setlength\cmsFigWidth{0.65\textwidth}} % example: one column in journal, 2/3 in CMS
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{upper\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{lower\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+\input{symbol}
+
+\cmsNoteHeader{AN-18-194} % This is over-written in the CMS environment: useful as preprint no. for export versions
+\title{Search for dark photon with Higgs boson decay to $Z \zd$ in the four-lepton final state at \sqrt{s} = 13 \TeV}
+
+\address[uf]{University of Florida}
+\address[ub]{Boston University}
+\address[ihep]{IHEP, Beijing}
+%\address[cern]{CERN}
+\address[ubel]{University of Belgrade}
+
+\author[ihep]{M. Ahmad}
+\author[ihep]{M. S. Chen}
+\author[ihep]{Q. Y. Guo}
+\author[ihep]{Z. G. Zhang}
+\author[ihep]{T. Javaid}
+\author[ubel]{P. Milenovic}
+\author[ub]{D. Sperka}
+\author[uf]{G. Mitselmakher}
+\author[uf]{A. Korytov}
+\author[uf]{J. Rosenzweig}
+\author[uf]{K. H. Lo}
+
+\date{\today}
+
+\abstract{
+  A search for dark photon with Higgs boson decay in the four-lepton final state is reported. The decay is assumed 
+  to undergo an intermediate state with a Z boson and a dark photon (\zd). The search uses collision data 
+  collected by the CMS detector with an integrated luminosity of \usedLumi at a centre-of-mass energy 
+  $\sqrt{s} = 13~\TeV$. 
+}
+
+\hypersetup{%
+pdfauthor={K. H. Lo, A. Korytov, D.Sperka},%
+pdftitle={Search for dark photon with Higgs boson decay in the four-lepton final state at sqrts = 13 TeV},%
+pdfsubject={CMS},%
+pdfkeywords={CMS, physics, software, computing}}
+
+\maketitle %maketitle comes after all the front information has been supplied
+
+\tableofcontents
+
+\input{sec-010-intro}
+\input{sec-015-model}
+\input{sec-020-datamc}
+\input{sec-030-obj}
+\input{sec-040-ana}
+\input{sec-050-obs}
+\input{sec-060-bkg}
+\input{sec-070-sys}
+\input{sec-075-yield}
+\input{sec-080-results}
+\input{sec-090-summary}
+
+\appendix
+\input{app-01-sigmc}
+
+\bibliography{auto_generated}   % will be created by the tdr script.

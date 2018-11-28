@@ -1,0 +1,60 @@
+The Tag-and-Probe study was performed on the single electron primary datasets listed in table \ref{tab:datasets_data} using the same golden JSON of 36.8 
+fb$^{-1}$ as for the main analysis. More details on the Tag-and-Probe method can be found in Ref.~\cite{AN-15-277}. 
+
+Tag electrons need to satisfy the following quality requirements:
+\begin{itemize}
+\item trigger matched to HLT\_Ele27\_eta2p1\_WPTight\_Gsf\_v*
+\item $p_{T} > 30$~GeV, super cluster (SC) $\eta < 2.1$ but on in EB-EE gap ($1.4442<|\eta|<1.566$)
+\item tight working point of the Spring16 cut-based electron ID
+\end{itemize}
+
+Probe electrons only need to be reconstructed as GsfElectron. The FSR recovery algorithm used in the main analysis is used consistently throughout the efficiency measurement: the isolations are calculated without any FSR photons matched to electrons and the probe electron \pt as well as the di-electron invariant mass include the FSR photons, if any. 
+
+
+The nominal MC efficiencies are evaluated from the LO MadGraph Drell-Yan sample, while the NLO systematics use the 0,1 jet MadGraph\_AMCatNLO sample listed in Table \ref{tab:MCsamples}.
+
+In contrast to previous efficiency measurements, a template fit is used here. The $m_{ee}$ signal shape of the passing and failing probes is taken from MC and convoluted with a Gaussian. The data is then fitted with the convoluted MC template and a CMSShape (an Error-function with a one-sided exponential tail). This change follows from the usage of the new T\&P tool developed by the EGM POG.
+
+
+%\paragraph{Electron selection efficiency measurements}\mbox{}\\
+%\label{par:Efficiency_measurements}
+
+The electron selection efficiency is measured as a function of the probe electron $p_{T}$ and its SC $\eta$, and separately for electrons falling in the ECAL gaps. Figure \ref{fig:ele_sel_pt_turn_on} shows the $\p_{T}$ turn-on curves measured in data, and the final 2D scale factor is shown in Fig.~\ref{fig:ele_sel_scale_factors} together with the systematic uncertainties. These scale factors are very similar to the ICHEP figures, but more homogenous across $\eta$ and $p_{T}$ because of the higher statistics and the usage of more stable fitting routines in the new T\&P tool.
+
+
+\begin{figure}[!htb]
+\begin{center}
+    \subfigure [] {\resizebox{7.5cm}{!}{\includegraphics{Figures/Electrons/ele_eff_pt.pdf}}}
+    \subfigure [] {\resizebox{7.5cm}{!}{\includegraphics{Figures/Electrons/gap_ele_eff_pt.pdf}}}\\
+\caption{Electron selection efficiencies measured using the Tag-and-Probe technique described in the text, non-gap electrons (left) and gap electrons (right).}
+\label{fig:ele_sel_pt_turn_on}
+\end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+\begin{center}
+    \subfigure [] {\resizebox{15cm}{!}{\includegraphics{Figures/Electrons/ele_eff_sf_unc.pdf}}}\\
+    \subfigure [] {\resizebox{15cm}{!}{\includegraphics{Figures/Electrons/gap_ele_eff_sf_unc.pdf}}}
+\caption{Electron selection efficiencies measured using the Tag-and-Probe technique described in the text, non-gap electrons (top) and gap electrons (bottom).}
+\label{fig:ele_sel_scale_factors}
+\end{center}
+\end{figure}
+
+
+%\paragraph{Systematic uncertainties}\mbox{}\\
+%\label{par:Systematic_uncertainties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ The EGM recommendations on the evaluation of Tag-and-Probe uncertainties for efficiency measurements are followed. Specifically, we consider
+
+\begin{itemize}
+   \item Variation of the signal shape from a MC shape to an analytic shape (Crystal Ball) fitted to the MC
+   \item Variation of the background shape from a CMS-shape to a simple exponential in fits to data
+   \item Variation of the tag selection: tag $p_{T}>$35~GeV and passes MVA-based 8X ID
+   \item Using an NLO MC sample for the signal templates
+\end{itemize}
+
+The total uncertainty for the measurement of the scale factors is the quadratic sum of the statistical uncertainties returned from the fit and the aforementioned systematic uncertainties.
+
+
+

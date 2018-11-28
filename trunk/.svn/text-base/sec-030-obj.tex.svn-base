@@ -1,0 +1,62 @@
+\section{Objects}
+\label{sec:obj}
+
+This analysis follows the same object definition as in~\cite{AN-16-442,AN-17-342}, and are 
+described as follows.
+
+\subsection{Electrons}
+
+\subsubsection{Electron Reconstruction}
+\label{sec:eleReco}
+\input{Objects/eleReco.tex}
+
+\subsubsection{Electron Identification}
+\label{sec:eleID}
+\input{Objects/eleID.tex}
+
+\subsubsection{Electron Isolation}
+\label{sec:eleiso}
+\input{Objects/eleIso.tex}
+
+\subsubsection{Electron Energy Calibrations}
+\input{Objects/eleCalib.tex}
+
+\subsubsection{Electron Efficiency Measurements}
+\label{sec:eleEffMeas}
+\input{Objects/eleEffMeas.tex}
+
+\clearpage
+
+\subsection{Muons}
+
+\subsubsection{Muon Reconstruction and Identification}
+\label{sec:muonReco}
+\input{Objects/muonReco}
+
+
+\subsubsection{Muon Isolation}
+\label{sec:muoniso}
+\input{Objects/muonIso}
+
+
+\subsubsection{Muon Energy Calibrations}
+% \input{Objects/muCalib}
+
+
+\subsubsection{Muon Efficiency Measurements}
+\label{sec:muonEffMeas}
+\input{Objects/muonEffMeas}
+
+
+%\subsection{Lepton Momentum Scale and Resolution validation using \texorpdfstring{\Zllll}{}}
+%\input{Objects/scaleresoZ4l}
+
+\clearpage
+
+\subsection{Photons for FSR recovery}
+\label{sec:FSRphotons}
+\input{Objects/FSR}
+
+%\subsection{Jets}
+%\label{sec:jets}
+%\input{Objects/jets.tex}

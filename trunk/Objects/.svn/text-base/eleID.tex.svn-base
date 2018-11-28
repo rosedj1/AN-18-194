@@ -1,0 +1,225 @@
+Reconstructed electrons are identified by means of a Gradient Boosted Decision Tree (GBDT) multivariate classifier algorithm, which exploits observables from the electromagnetic cluster, the matching between the cluster and the electron track as well as observables based exclusively on tracking measurements. 
+The BDT has been retrained using CMSSW\_8\_0\_X samples.
+
+The classifier is trained on  Drell-Yan plus jets MC sample for both signal and background: 
+{
+\tiny  
+\begin{verbatim}
+/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16DR80-PUSpring16_80X_mcRun2_asymptotic_2016_v3_ext1-v1/
+\end{verbatim}
+}
+
+The impact of the retraining of the ID for the 2016 conditions is illustrated in the ROC curves shown in Fig.~\ref{fig:ele_ID_ROC}. Several studies to improve the performance of the MVA for the harsher 2016 running conditions were performed. 
+One study considered a new spitting of the BDT training bins, where electrons falling into the gap regions of the ECAL, e.g. the EB-EE transition region, where trained separately from the non-gap electrons. 
+No improvement for either population is observed, indicating that the current setup is already able to properly take the significantly differing input distributions in those regions into account. 
+Also studied where additional variables including more cluster-shape observables. 
+None of these variables helped to improve the performance in the relevant $>95\%$ signal efficiency regime, though up to $20\%$ improved background rejection was seen for $80\%$ working points. 
+Finally, the hyper-parameters of the MVA were systematically scanned for their optimal values. The resulting configuration was found to improve the overall performance only marginally by $<10\%$, however, introducing a significant overtraining effect. 
+Due to the small gains and large overtraining, it was decided to not modify the hyper-parameters beyond the interface changes coming from changing to the latest 4.2.0 version of the TMVA package.
+
+Figure~\ref{fig:ele_ID_BDT_output} shows the output of the BDT on the training and testing samples for true and fake electrons 
+for the high-$p_T$ training bin in the endcap. 
+The good agreement between the training and testing distributions is similar across the 6 training bins and indicates that the classifier has not been overtrained.
+
+\begin{figure}[!htb]
+\vspace*{0.3cm}
+\begin{center}
+\includegraphics[width=0.80\textwidth]{Figures/Electrons/ele_ROC.png}
+\caption{Performance comparison of the MVA trained for the 2015 analysis and the retraining for 2016 conditions. 
+The respective working points are indicated by the markers.
+\label{fig:ele_ID_ROC}}
+\end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+\vspace*{0.3cm}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Figures/Electrons/ele_overtraining.png}
+\caption{BDT output for the training and testing sample for true and fake electrons in the high-$p_T$ endcap training bins.
+\label{fig:ele_ID_BDT_output}}
+\end{center}
+\end{figure}
+
+Table~\ref{tab:ele_ID_input_variables_16}-\ref{tab:ele_ID_input_variables_18} summarizes the full list of observables used as input to the classifier
+and table~\ref{tab:ele_ID_WP_16}-\ref{tab:ele_ID_WP_18} lists the cut values applied to the BDT score for the chosen working point. 
+For the analysis, we define {\bf tight electrons} as the loose electrons that pass this MVA identification working point. 
+
+ \begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|l}
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+observable type    &  observable name      	\\
+\hline %----------------------------------------------------------------------------------------
+
+\multirow{6}{*}{cluster shape}
+	&  RMS of the energy-crystal number spectrum along $\eta$ and $\varphi$; $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$		\\
+	&  super cluster width along $\eta$ and $\phi$		\\
+	&  'ratio of the hadronic energy behind the electron 
+supercluster to the supercluster energy, $H/E$			\\
+	&  circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$			\\
+	&  sum of the seed and adjacent crystal over the super cluster energy $R_{9}$			\\
+	&  for endcap traing bins: energy fraction in pre-shower $E_{PS}/E_{raw}$			\\
+\hline
+\multirow{2}{*}{track-cluster matching}
+	& energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ 			\\
+	& position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$			\\
+\hline
+\multirow{5}{*}{tracking}
+        & fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$	\\
+        & number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
+        & reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
+        & number of expected but missing inner hits $(\mathord{\cdot})$ 	\\
+        & probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
+
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+    \caption{Overview of input variables to the identification classifier in Run 2016. Variables not used in the run I MVA are marked with  $(\mathord{\cdot})$.}
+    \label{tab:ele_ID_input_variables_16}
+\end{table}
+
+ \begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|l}
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+observable type    &  observable name      	\\
+\hline %----------------------------------------------------------------------------------------
+
+\multirow{6}{*}{cluster shape}
+	&  RMS of the energy-crystal number spectrum along $\eta$ and $\varphi$; $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$		\\
+	&  super cluster width along $\eta$ and $\phi$		\\
+	&  'ratio of the hadronic energy behind the electron 
+supercluster to the supercluster energy, $H/E$			\\
+	&  circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$			\\
+	&  sum of the seed and adjacent crystal over the super cluster energy $R_{9}$			\\
+	&  for endcap traing bins: energy fraction in pre-shower $E_{PS}/E_{raw}$			\\
+\hline
+\multirow{2}{*}{track-cluster matching}
+	& energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ 			\\
+	& position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$			\\
+\hline
+\multirow{5}{*}{tracking}
+        & fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$	\\
+        & number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
+        & reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
+        & number of expected but missing inner hits $(\mathord{\cdot})$ 	\\
+        & probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
+\hline
+\multirow{3}{*}{isolation}
+& Particle Flow photon isolation sum $(\mathord{\cdot})$ \\
+& Particle Flow charged hadrons isolation sum $(\mathord{\cdot})$ \\
+& Particle Flow neutral hadrons isolation sum $(\mathord{\cdot})$ \\
+\hline
+\multirow{1}{*}{For PU-resilience}
+& Mean energy density in the event: $\rho$ $(\mathord{\cdot})$ \\
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+    \caption{Overview of input variables to the identification classifier in Run 2017. Variables not used in the run I MVA are marked with  $(\mathord{\cdot})$.}
+    \label{tab:ele_ID_input_variables_17}
+\end{table}
+
+ \begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|l}
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+observable type    &  observable name      	\\
+\hline %----------------------------------------------------------------------------------------
+
+\multirow{6}{*}{cluster shape}
+	&  RMS of the energy-crystal number spectrum along $\eta$ and $\varphi$; $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$		\\
+	&  super cluster width along $\eta$ and $\phi$		\\
+	&  'ratio of the hadronic energy behind the electron 
+supercluster to the supercluster energy, $H/E$			\\
+	&  circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$			\\
+	&  sum of the seed and adjacent crystal over the super cluster energy $R_{9}$			\\
+	&  for endcap traing bins: energy fraction in pre-shower $E_{PS}/E_{raw}$			\\
+\hline
+\multirow{2}{*}{track-cluster matching}
+	& energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ 			\\
+	& position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$			\\
+\hline
+\multirow{5}{*}{tracking}
+        & fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$	\\
+        & number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
+        & reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
+        & number of expected but missing inner hits $(\mathord{\cdot})$ 	\\
+        & probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
+
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+\caption{[Placeholder for 2018] Overview of input variables to the identification classifier in Run 2018. Variables not used in the run I MVA are marked with  $(\mathord{\cdot})$.}
+    \label{tab:ele_ID_input_variables_18}
+\end{table}
+
+
+\begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|c c c}
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+\hline %----------------------------------------------------------------------------------------
+minimum BDT score    &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
+\hline %----------------------------------------------------------------------------------------
+$ 5 < p_T < 10 $ GeV &  -0.211      & -0.396  		& -0.215		\\
+$p_T > 10$ GeV       &  -0.870		& -0.838		& -0.763		\\
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+    \caption{Minimum BDT score required for passing the electron identification in Run 2016.}
+    \label{tab:ele_ID_WP_16}
+\end{table}
+
+\begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|c c c}
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+\hline %----------------------------------------------------------------------------------------
+minimum BDT score    &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
+\hline %----------------------------------------------------------------------------------------
+$ 5 < p_T < 10 $ GeV &  0.628      & 0.592  		& 0.637		\\
+$p_T > 10$ GeV       &  0.036		& 0.043		& -0.266		\\
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+    \caption{Minimum BDT score required for passing the electron identification in Run 2017.}% \textbf{FIXME: WP to be defined!}}
+    \label{tab:ele_ID_WP}
+\end{table}
+
+\begin{table}[h!]
+\scriptsize
+    \centering
+    \begin{tabular}{c|c c c}
+%\multicolumn{4}{|c|}{Datasets}                                                                \\
+\hline %----------------------------------------------------------------------------------------
+minimum BDT score    &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
+\hline %----------------------------------------------------------------------------------------
+$ 5 < p_T < 10 $ GeV &  -0.211      & -0.396  		& -0.215		\\
+$p_T > 10$ GeV       &  -0.870		& -0.838		& -0.763		\\
+\hline %----------------------------------------------------------------------------------------
+\hline %----------------------------------------------------------------------------------------
+     \end{tabular}
+\small
+\caption{[Placeholder for 2018] Minimum BDT score required for passing the electron identification in Run 2018.}
+    \label{tab:ele_ID_WP_18}
+\end{table}
+
+
+% Finally, the measurement of the signal efficiencies in data and the data-MC scale factors are presented in section~\ref{sec:eleEffMeas}. 
+

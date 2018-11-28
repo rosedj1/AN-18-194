@@ -1,0 +1,19 @@
+\section{General strategy}
+\label{sec:strat}
+
+To exploit the kinematic properties of the signal process
+$p p \rightarrow H \rightarrow Z \zd \rightarrow 4\ell$, an algorithm used 
+by~\cite{AN-16-442,AN-17-342}, with different kinematic cuts, is employed to fully reconstruct Z boson candidates and 
+Higgs candidates for each event, based on kinematics of four leptons in the event, 
+as described in Section~\ref{sec:evtselection}. 
+In the case of $H \rightarrow Z \zd$, the invariant mass of one of the Z boson candidates (\mass{Z1}) will be 
+close to the Z boson mass $\mass{Z} = 91.1876 \pm 0.0021~\GeV$, while that of another Z boson candidate 
+(\mass{Z2}) will be close to the assumed \mass{\zd} in the model. Therefore, the \mass{Z2} varaible provides a 
+strong signal background discrimination and therefore is used as a binning variable for the analysis. 
+In particular, a mass window is built around each \mass{\zd} point considered and a cut-and-count analysis 
+is performed in the muon and electron channel. For the muon (electron) channel, the width is taken to be 
+$\pm 2\%$ ($\pm 5\%$) of \mass{\zd}. Detail of event selections are described in Section~\ref{sec:evtselection}.
+The choices of mass window are detailed in Section~\ref{sec:masswindow}. Effects of interference are 
+detailed in Section~\ref{sec:interference}. Background estimation and validations with various control samples 
+are described in Section~\ref{sec:bkgd}. Various systematic uncertainties are detailed in Section~\ref{sec:syst}. 
+Last but not least, results and interpretations in the HAHM model are presented in Section~\ref{sec:result}.

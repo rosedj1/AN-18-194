@@ -1,0 +1,31 @@
+\section{Introduction}
+
+Following the discovery of the Higgs boson with the ATLAS and CMS experiment~\cite{paper:Aad:2012,paper:Chatrchyan:2012}, 
+a thorough program of precise measurements and searches has 
+been carried out on this particle, both to uncover possible deviations from the Standard Model (SM) or decipher the nature of the Higgs 
+sector. In particular, various exotic Higgs decays have been widely considered, in which small deviations in the Higgs decay 
+width or discovery of exotic decay modes could mean hints of Beyond-Standard-Model (BSM) physics.
+
+One well-motivated class of BSM models that could lead to exotic Higgs decays includes theories with a hidden "dark" 
+sector~\cite{Curtin:2014cca,Curtin:2013fra,Davoudiasl:2013aya,Davoudiasl:2012ag,Gopalakrishna:2008dv}.
+Among various BSM final states presented in these theories,  
+the focus here is on the process $p p \rightarrow h \rightarrow Z \zd \rightarrow 4\ell$, with \zd 
+representing a new vector boson in the dark sector. 
+%Section~\ref{sec:datamc} introduces the signal model considered in this analysis 
+%and Section~\ref{sec:app-01-sigmc} describes the validation of kinematic properties of this signal model to the state-of-the-art 
+%event generator used by various $p p \rightarrow h \rightarrow Z Z^* \rightarrow 4\ell$ analysis.
+This signal process is kinematically similar to the SM process $p p \rightarrow h \rightarrow Z Z^* \rightarrow 4\ell$, 
+therefore similar analysis techniques can be employed to perform this search. This search uses $pp$ collision data at a centre-of-mass energy 
+$\sqrts = 13~\TeV$ collected by the CMS detctor, using the full Run 2 dataset with \usedLumi. \zd is assumed to decay to electron 
+and muon, giving rise to the $4e$, $4\mu$, $2e2\mu$, $2\mu2e$ final state. Assuming only on-shell decay, only the mass range 
+$\mass{\zd} < 35~\GeV$ is kinematically possible. In this analysis, a mass range of $4~\GeV < \mass{\zd} < 35~\GeV$ is considered. 
+The narrow mass window around the meson $\Upsilon$ state (\mass{\Upsilon}) is excluded.
+
+The outline of this document is as follows: An introduction to the dark photon model is described in Section~\ref{sec:model}. 
+Section~\ref{sec:datamc} introduces data and MC samples used in this analysis.
+Section~\ref{sec:obj} describes definitions of various physics objects. Section~\ref{sec:strat}-\ref{sec:bkgd} details 
+the analysis strategy and method. Section~\ref{sec:syst} describes various sources of systematic unceratinties. 
+Section~\ref{sec:yield} presents various yields and distributions after signal region selections, which are used for 
+inputs for results and interpretations. Section~\ref{sec:result} introduces the likelihood model and presents interpretations 
+with the HAHM model, in particular, upper limits on the kinematic mixing parameter $\epsilon$ and $Br(H \rightarrow Z \zd)$ 
+are reported.
